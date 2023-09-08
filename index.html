@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./_js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+    <style>
+        #topbg {
+            height: 100vh;
+            /* 設定上半部分高度，*/
+            background-image: url("./img/spirited_away.jpg");
+            /* 設定初始的背景圖片路徑 */
+            background-position: center top;
+            background-size: cover;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+            transition: background-image 0.5s ease-in-out;
+            /* 添加過渡效果 */
+        }
+
+        #topbg.full-black {
+
+            background-image: none !important;
+            /* 將背景圖片設置為無 */
+            background-color: #000000 !important;
+            /* 設置全黑背景顏色 */
+        }
+
+        #bottombg {
+            height: calc(100vh - 600px);
+            /* 设置下半部分高度 */
+            background-position: center top;
+            background-size: cover;
+            object-fit: cover;
+            background-repeat: no-repeat;
+        }
+
+        @media (min-width: 601px) {
+            #bottombg {
+                display: none;
+            }
+        }
+         @media (max-width: 600px) {
+            #topbg {
+                background-image: url('./img/another_image.jpg');
+                
+            }
+        }
+        @media (max-width: 600px) {
+            #topbg {
+                background-image: url('./img/another_image.jpg');
+            }
+
+            #topbg.full-black {
+                background-image: none !important;
+                /* 将背景图像设置为无 */
+                background-color: #000000 !important;
+                /* 设置全黑背景颜色 */
+            }}
+    </style>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            var topbg = document.getElementById("topbg");
+            var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+            // 設定滾動位置閾值，當滾動到一定位置時切換背景樣式
+            var threshold = window.innerHeight * 0.7;
+
+            if (scrollPosition >= threshold) {
+                topbg.classList.add("full-black");
+            } else {
+                topbg.classList.remove("full-black");
+            }
+        });
+
+
+        // text
+        window.addEventListener("DOMContentLoaded", function () {
+            function updateBackgroundImage() {
+                var topbg = document.getElementById("topbg");
+                var windowWidth = window.innerWidth;
+
+                if (windowWidth < 600) {
+                    topbg.style.backgroundImage = "url('./img/dr.jpg')";
+                } else {
+                    topbg.style.backgroundImage = "url('./img/spirited_away.jpg')";
+                }
+            }
+
+            window.addEventListener("resize", updateBackgroundImage);
+
+            // 初始加载时执行一次
+            updateBackgroundImage();
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div id="blacktop" class="fixed-top"></div>
+    <div id="topbg" class="fixed-top"></div>
+    <div id="bottombg" class="fixed-top m-2" style="background-image: url('./img/dr.jpg');"></div>
+    <div id="top" class="fixed-top d-flex mt1  p-4 flex-wrap">
+        <img class="toplogo me-auto" src="./img/logonetflix.png" alt="">
+        <p class="text-light ">不限時數的節目與電影</p>
+        <a class="btn btn-danger" href="">立即加入</a>
+        <a class="btn btn-light bg-black text-light" href="">登入</a>
+
+    </div>
+    <div>
+        <img src="./img/spirited_away_logo.jpg" class="logo" alt="">
+    </div>
+    <div class='space'></div>
+    <!-- 神隱少女
+    2001 | 年齡分級：7+ | 2 小時 5 分鐘 | 動漫電影
+    千尋意外來到一個由女巫治理的魔法世界。在這裏，所有違抗女巫的人都被變成了動物。
+    主演：柊瑠美，入野自由，夏木麻里 -->
+
+    <div>
+        <p class="p0">神隱少女</p>
+        <p class="p1">2001 | 年齡分級：7+ | 2 小時 5 分鐘 | 動漫電影</p>
+        <p class="p2">千尋意外來到一個由女巫治理的魔法世界。在這裏，所有違抗女巫的人都<br>
+            被變成了動物。</p>
+        <div class="inline mb-5">
+            <span class="p3">主演 </span>
+            <span class="p4">：柊瑠美，入野自由，夏木麻里</span>
+        </div>
+        <div class="black"></div>
+        <div class="re"></div>
+        <div class="blackBottom"></div>
+        <div class="container"></div>
+    </div>
+    <div>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <p id="pt" class="text-center fs-4">這部傑作出自宮崎駿之手，是奧斯卡史上唯一一部抱回最佳動畫片的非英語電影。</p>
+        <hr>
+
+    </div>
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+
+    <div>
+        <p id="ppp" class="text-light fs-2 text-left ">類似影片</p>
+        <div id="movie" class=" row mb-4 container-fluid ">
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_01.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_02.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_03.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_04.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_05.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_06.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_07.jpg" alt=""></a>
+            <a href="" class="col-xl-3 col-md-6 col-sm-12 container-lg"><img src="./img/img_08.jpg" alt=""></a>
+        </div>
+    </div>
+</body>
+
+</html>
